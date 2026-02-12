@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@theme {
+  --font-body: 'Outfit', sans-serif;
+  --color-background: #0a0a0c;
+  --color-foreground: #f8fafc;
+  --color-primary: #6366f1;
+  --color-primary-hover: #818cf8;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0a0a0c] text-[#f8fafc] font-body antialiased overflow-x-hidden leading-relaxed;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/10;
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300 cursor-pointer font-body border-none outline-none;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-indigo-500 to-purple-600 text-white hover:-translate-y-0.5 hover:shadow-[0_10px_20px_rgba(99,102,241,0.3)];
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent;
+  }
+}
+
+/* Precise positioning for Sonner close button */
+[data-sonner-toast] [data-close-button] {
+  @apply !absolute !top-2 !right-2 !left-auto !transform-none !opacity-100;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #94a3b8 !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-sonner-toast] [data-close-button]:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #f8fafc !important;
+}
