@@ -48,13 +48,31 @@ blog-website/
 ## 🚀 Setup & Installation
 
 ### 1. Backend Setup
-```bash
+
+#### **Windows (PowerShell/CMD)**
+```powershell
 # Navigate to backend directory
 cd backend
 
 # Create and activate virtual environment
 python -m venv venv
-.\venv\Scripts\Activate.ps1  # Windows
+.\venv\Scripts\Activate.ps1
+
+# Install dependencies
+pip install fastapi uvicorn sqlalchemy
+```
+
+#### **WSL / Ubuntu / Linux**
+```bash
+# Navigate to backend directory
+cd backend
+
+# Install venv dependencies (if missing)
+sudo apt update && sudo apt install python3-venv
+
+# Create and activate virtual environment
+python3 -m venv venv
+source venv/bin/activate
 
 # Install dependencies
 pip install fastapi uvicorn sqlalchemy
