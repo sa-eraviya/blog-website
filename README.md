@@ -1,58 +1,91 @@
-# FastAPI CRUD Blog API
+# Modern CRUD Blog Website
 
-A simple and efficient CRUD (Create, Read, Update, Delete) Blog API built with **FastAPI**, **SQLAlchemy**, and **SQLite**.
+A full-stack Blog application featuring a high-performance **FastAPI** backend and a stunning, responsive **React** frontend. Built with modern web development best practices, it offers a seamless experience for creating and managing blog posts.
 
-## 🚀 Features
-- **Root Endpoint**: Welcome message and navigation guidance.
-- **Create**: Add new blog posts with a title and content.
-- **Read**: Retrieve all blogs or a single blog by ID.
-- **Update**: Modify existing blog posts.
-- **Delete**: Remove blog posts from the database.
-- **Automatic Documentation**: Interactive API docs powered by Swagger UI.
+## ✨ Features
+
+### 💻 Frontend (React)
+- **Modern UI**: Sleek, minimalist design with dark mode and vibrant aesthetics.
+- **Dynamic Animations**: Smooth transitions powered by Framer Motion.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop.
+- **Form Handling**: Robust validation using React Hook Form and Zod.
+- **Toast Notifications**: Real-time feedback with Sonner.
+- **Clean Interactions**: Interactive elements with hover effects and glassmorphism.
+
+### ⚙️ Backend (FastAPI)
+- **Full CRUD API**: Create, Read, Update, and Delete blog posts.
+- **CORS Support**: Configured for seamless communication with the frontend.
+- **Database**: Persistent storage using SQLite and SQLAlchemy ORM.
+- **Pydantic Models**: Strong data validation and type safety.
+- **Auto-Docs**: Interactive API documentation via Swagger UI and ReDoc.
 
 ## 🛠️ Tech Stack
-- **Backend**: FastAPI (Python)
-- **Database**: SQLite
-- **ORM**: SQLAlchemy
-- **Validation**: Pydantic
+
+- **Backend**: FastAPI (Python), SQLAlchemy, Pydantic, SQLite
+- **Frontend**: React 19, Vite, Tailwind CSS v4, Framer Motion, Axios, Lucide React, Sonner
+- **Validation**: Zod, React Hook Form
 
 ## 📂 Project Structure
+
 ```text
 blog-website/
-└── backend/
-    ├── main.py        # API Endpoints
-    ├── models.py      # SQLAlchemy Models
-    ├── schemas.py     # Pydantic Schemas
-    ├── database.py    # DB Configuration
-    ├── crud.py        # CRUD Logic
-    └── blog.db        # SQLite Database
+├── backend/            # FastAPI Backend
+│   ├── main.py         # API Endpoints & CORS
+│   ├── models.py       # SQLAlchemy Models
+│   ├── schemas.py      # Pydantic Schemas
+│   ├── database.py     # DB Configuration
+│   ├── crud.py         # CRUD Logic
+│   └── blog.db         # SQLite Database
+├── frontend/           # React Frontend (Vite)
+│   ├── src/
+│   │   ├── components/ # Reusable UI Components
+│   │   ├── App.jsx     # Main Application Logic
+│   │   └── index.css   # Global Styles (Tailwind)
+│   └── package.json    # Frontend Dependencies
+└── README.md
 ```
 
-## ⚙️ Setup & Installation
+## 🚀 Setup & Installation
 
-### 1. Enable Virtual Environment
-```powershell
-.\venv\Scripts\Activate.ps1
-```
-
-### 2. Install Dependencies
+### 1. Backend Setup
 ```bash
+# Navigate to backend directory
+cd backend
+
+# Create and activate virtual environment
+python -m venv venv
+.\venv\Scripts\Activate.ps1  # Windows
+
+# Install dependencies
 pip install fastapi uvicorn sqlalchemy
 ```
 
-### 3. Run the Server
+### 2. Frontend Setup
 ```bash
+# Navigate to frontend directory
+cd frontend
+
+# Install dependencies
+npm install
+```
+
+## ⚙️ Running the Application
+
+### 1. Start the Backend
+```bash
+cd backend
 uvicorn main:app --reload
 ```
-The API will be available at `http://localhost:8000`.
+API Root: `http://localhost:8000`
+API Docs: `http://localhost:8000/docs`
+
+### 2. Start the Frontend
+```bash
+cd frontend
+npm run dev
+```
+Frontend: `http://localhost:5173`
 
 ## 📖 API Documentation
-Once the server is running, you can access the interactive documentation at:
-- **API Root**: [http://localhost:8000/](http://localhost:8000/)
 - **Swagger UI**: [http://localhost:8000/docs](http://localhost:8000/docs)
 - **ReDoc**: [http://localhost:8000/redoc](http://localhost:8000/redoc)
-
-## 🚧 Next Steps
-- [ ] Add CORS MiddleWare for Frontend integration.
-- [ ] Implement React Frontend.
-- [ ] Add Form validation and error handling.
