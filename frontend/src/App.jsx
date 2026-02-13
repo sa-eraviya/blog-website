@@ -64,6 +64,7 @@ function App() {
 
   const confirmDelete = (id) => {
     toast('Are you sure you want to delete this post?', {
+      description: 'This action cannot be undone.',
       action: {
         label: (
           <span className="flex items-center gap-1.5 text-sm font-semibold">
@@ -73,9 +74,19 @@ function App() {
         ),
         onClick: () => handleDelete(id),
       },
+      cancel: {
+        label: 'Cancel',
+        onClick: () => { },
+      },
       actionButtonStyle: {
         background: '#dc2626',
         color: 'white',
+        borderRadius: '8px',
+      },
+      cancelButtonStyle: {
+        background: 'rgba(255,255,255,0.05)',
+        color: '#94a3b8',
+        borderRadius: '8px',
       },
       duration: 10000,
     });
