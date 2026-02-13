@@ -59,7 +59,7 @@ python -m venv venv
 .\venv\Scripts\Activate.ps1
 
 # Install dependencies
-pip install fastapi uvicorn sqlalchemy
+pip install -r requirements.txt
 ```
 
 #### **WSL / Ubuntu / Linux**
@@ -75,7 +75,7 @@ python3 -m venv venv
 source venv/bin/activate
 
 # Install dependencies
-pip install fastapi uvicorn sqlalchemy
+pip install -r requirements.txt
 ```
 
 ### 2. Frontend Setup
